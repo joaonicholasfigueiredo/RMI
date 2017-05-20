@@ -16,9 +16,9 @@ import java.util.List;
  *
  * @author Aluno
  */
-public class Searcher implements br.com.fatesg.buscador.Buscador{
+public class Buscador implements br.com.fatesg.buscador.IBuscador{
     
-    List<Searcher> lista = new ArrayList<>();
+    List<Buscador> lista = new ArrayList<>();
     final String PATH = "C:\\Users\\Aluno\\Desktop\\Conteudo_Everton\\Atividade_RMI";
     
 
@@ -26,7 +26,7 @@ public class Searcher implements br.com.fatesg.buscador.Buscador{
     public File buscar(String string) throws RemoteException {
         File arquivo = buscar2(string);
         if (arquivo == null) {
-            for (br.com.fatesg.buscador.Buscador b : lista) {
+            for (br.com.fatesg.buscador.IBuscador b : lista) {
                 arquivo = b.buscar(string);
                 if (arquivo != null) 
                     return arquivo;

@@ -8,13 +8,13 @@ public class ExecutarDois {
     public ExecutarDois() throws Exception {comRMI();}
 
     private void comRMI() throws Exception {
-        Registry reg = LocateRegistry.createRegistry(5577);
-        IPesquisa buscador = new Pesquisa();
-        IPesquisa iuc = (IPesquisa) reg.lookup("A1");
+        Registry reg = LocateRegistry.createRegistry(12345);
+        br.com.fatesg.buscador.IBuscador buscador = new Buscador();
+        br.com.fatesg.buscador.IBuscador iuc = (br.com.fatesg.buscador.IBuscador) reg.lookup("A1");
 
-        buscador.addProximo(iuc);
+//        buscador.addProximo(iuc);
         
-        reg.rebind("A1", buscador);
+        reg.rebind("G1", buscador);
         System.out.println("Objeto cadastrado.");
     }
 

@@ -10,10 +10,10 @@ public class ExecutarUm {
     }
 
     private void executaComRMI() throws Exception {
-        Registry rmiRegistry = LocateRegistry.getRegistry("127.0.0.1",
-                5577);
+        Registry rmiRegistry = LocateRegistry.getRegistry("192.168.107.210",
+                12345);
         System.out.println("Conectando");
-        IPesquisa iuc = (IPesquisa) rmiRegistry.lookup("A1");
+        br.com.fatesg.buscador.IBuscador iuc = (br.com.fatesg.buscador.IBuscador) rmiRegistry.lookup("G1");
 
         iuc.buscar("data");
     }
